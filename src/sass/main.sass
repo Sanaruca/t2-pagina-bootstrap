@@ -1,0 +1,42 @@
+@import "node_modules/bootstrap/scss/functions"
+@import "node_modules/bootstrap/scss/variables"
+
+// colors
+$primary: #FFE01B
+$my-theme-colors: ("primary": $primary)
+$theme-colors: map_merge( $theme-colors, $my-theme-colors)
+
+
+// font-sizes
+// $font-size-root: 10px
+$font-size-base: 20px
+$h1-font-size: 2.4em
+$h2-font-size: 1.8em
+$h3-font-size: 1.2em
+
+// spacers
+
+// $spacer: 1rem !default;
+// $spacers: (
+//   0: 0,
+//   1: $spacer * .25,
+//   2: $spacer * .5,
+//   3: $spacer,
+//   4: $spacer * 1.5,
+//   5: $spacer * 3,
+// ) !default;
+
+
+$my-spacers: ( 6: 3em, 7: 3.5em, 8: 4em, 20: 10em )
+$spacers: map_merge($spacers, $my-spacers)
+
+// z-index
+$zindex-levels: (n1: -1, 0: 0, 1: 10, 2: 20, 3: 30)
+
+
+@import "node_modules/bootstrap/scss/bootstrap.scss"
+
+@import "_landingpage"
+@import "_about"
+@import "_utilities"
+@import "_styles"

@@ -1,0 +1,17 @@
+
+.mainpage__featured-blog
+  display: flex
+  gap: 3rem
+  flex-wrap: wrap
+  flex-direction: column
+
+  &__col
+    overflow: hidden
+    flex: 1
+    &--img-content
+      max-height: 332px
+      // height: 4.32rem
+
+@include media-breakpoint-up(md)
+  .mainpage__featured-blog
+    flex-direction: row

@@ -1,0 +1,100 @@
+body
+  // overflow-x: hidden // aux for about page
+
+img
+  object-fit: cover
+
+main
+  max-width: 1450px
+  margin: auto
+  margin-top: 7em
+
+.btn, .form-control
+  padding: .8em 1.4em
+  border: 1px solid #000
+
+.btn
+  font-weight: bold
+  position: relative
+  overflow: hidden
+  // background: none
+  z-index: 10
+
+  &::before, &::after
+    background: inherit
+    height: 100%
+    width: 100%
+    display: block
+    position: absolute
+    content: ""
+    top: 0
+    left: 0
+    z-index: -20
+
+  &::after
+    background: #fff
+    top: 100%
+    left: -100%
+    z-index: -10
+    transition: cubic-bezier(0.4, 0, 0.2, 1) .27s
+    border-radius: 50rem
+    transform: scale(1.2)
+
+  &:hover
+    border-color: #000
+    background: none
+
+    &::after
+      top: 0
+      left: 0
+
+// components
+.blogs-content__article-link
+
+  // max-width: 25.2em
+  color: #000
+  text-decoration: none
+
+  &__img-content
+    height: 261px
+    position: relative
+    border: 2px solid #000
+    width: 100%
+
+    &__img
+      height: 100%
+      width: 100%
+      // z-index: 100
+
+    &::after
+      opacity: 0
+      content: "Clik To Read"
+      position: absolute
+      font-size: 1.2em
+      font-weight: bold
+      top: 0
+      left: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      background: var(--bs-primary)
+      height: 100%
+      width: 100%
+      transition: all .4s
+      // z-index: 200
+
+  &:hover &__img-content::after
+    opacity: 1
+
+  &:hover &__title
+    text-decoration: underline
+
+@include media-breakpoint-up(sm)
+  .blogs-content__article-link__img-content
+    height: 361px
+
+@include media-breakpoint-up(lg)
+  .blogs-content__article-link
+    width: 50%
+    &__img-content
+      height: 361px

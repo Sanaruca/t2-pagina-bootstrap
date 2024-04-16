@@ -1,0 +1,18 @@
+
+@use 'sass:map'
+
+.about-section
+
+  &__content
+    padding-bottom: 8em
+
+  &::after
+    content: ""
+    display: block
+    height: 23.5em
+    width: 100vw
+    position: absolute
+    bottom: 0
+    left: -(map.get($my-spacers, 20))
+    z-index: -1
+    background: var(--bs-primary)
